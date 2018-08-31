@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
+        <name>ascending</name>
+        <rest_message_function display_value="Get Mobile Subscriptions">52d11449371023009636ded993990e6d</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-08-31 11:38:29</sys_created_on>
+        <sys_id>87b9b405379023009636ded993990ec9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>ascending</sys_name>
+        <sys_package display_value="Telenor Connect" source="x_270346_telenor_c">0bff00c5371023009636ded993990e6a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Telenor Connect">0bff00c5371023009636ded993990e6a</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_87b9b405379023009636ded993990ec9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-08-31 11:40:36</sys_updated_on>
+        <type>string</type>
+        <value>true</value>
+    </sys_rest_message_fn_parameters>
+</record_update>

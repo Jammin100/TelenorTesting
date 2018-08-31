@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Mobile Subscriptions" max_length="40" name="x_270346_telenor_c_mobile_subscriptions" type="collection">
+        <element label="Freetext" max_length="100" name="freetext" type="string"/>
+        <element display="true" label="msisdn" max_length="20" name="msisdn" type="string"/>
+    </element>
+</database>

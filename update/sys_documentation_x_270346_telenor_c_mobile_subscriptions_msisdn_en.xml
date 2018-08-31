@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="msisdn" label="msisdn" language="en" table="x_270346_telenor_c_mobile_subscriptions">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>msisdn</element>
+            <help/>
+            <hint/>
+            <label>msisdn</label>
+            <language>en</language>
+            <name>x_270346_telenor_c_mobile_subscriptions</name>
+            <plural>msisdns</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-08-31 08:54:17</sys_created_on>
+            <sys_id>ec441c89371023009636ded993990ea2</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>msisdn</sys_name>
+            <sys_package display_value="Telenor Connect" source="x_270346_telenor_c">0bff00c5371023009636ded993990e6a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Telenor Connect">0bff00c5371023009636ded993990e6a</sys_scope>
+            <sys_update_name>sys_documentation_x_270346_telenor_c_mobile_subscriptions_msisdn_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-08-31 09:16:19</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
