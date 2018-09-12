@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>sysverb Import Mobile Subscriptions</action_name>
+        <active>true</active>
+        <client>false</client>
+        <client_script_v2/>
+        <comments/>
+        <condition/>
+        <form_action>false</form_action>
+        <form_button>false</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>true</list_action>
+        <list_banner_button>true</list_banner_button>
+        <list_button>true</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <name>Import Mobile Subscriptions</name>
+        <onclick/>
+        <order>100</order>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	// Add your code here
+	try { 
+	 var r = new sn_ws.RESTMessageV2('x_270346_telenor_c.Mobile Subscription Info API', 'Get Mobile Subscriptions');
+
+	//override authentication profile 
+	//authentication type ='basic'/ 'oauth2'
+	//r.setAuthentication(authentication type, profile name);
+
+	//set a MID server name if one wants to run the message on MID
+	//r.setMIDServer('MY_MID_SERVER');
+
+	//if the message is configured to communicate through ECC queue, either
+	//by setting a MID server or calling executeAsync, one needs to set skip_sensor
+	//to true. Otherwise, one may get an intermittent error that the response body is null
+	//r.setEccParameter('skip_sensor', true);
+
+	 var response = r.execute();
+	 var responseBody = response.getBody();
+	 var httpStatus = response.getStatusCode();
+	
+		var db = new GlideRecord('x_270346_telenor_c_mobile_subscriptions');
+		db.initialize();
+		
+		var responseObj = JSON.parse(responseBody);
+		for(i=0;i<responseObj.length;i++)
+			{
+				//gs.info("Luupissa: " + responseObj[i].msisdn);
+				//current.msisdn = responseObj[i].msisdn;
+				//current.insert();
+				db.setValue('msisdn', responseObj[i].msisdn);
+				db.setValue('freetext', 'Freetext #'+(i+1));
+				db.insert();
+			}
+		//current.msisdn = responseObj.msisdn;
+		//gs.info("DATAT: " + responseBody);
+		//gs.info("MSISDN ennen updatea: " + responseObj.msisdn);
+		//current.update();
+		//gs.info("MSISDN jälkeen: " + current.msisdn);
+	}
+	catch(ex) {
+	 var message = ex.message;
+		gs.info("Uncaught error: " + message);
+	}
+})(current, previous);]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-08-31 13:38:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f51391c137d023009636ded993990e84</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Import Mobile Subscriptions</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Telenor Connect" source="x_270346_telenor_c">0bff00c5371023009636ded993990e6a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Telenor Connect">0bff00c5371023009636ded993990e6a</sys_scope>
+        <sys_update_name>sys_ui_action_f51391c137d023009636ded993990e84</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-08-31 14:00:29</sys_updated_on>
+        <table>x_270346_telenor_c_mobile_subscriptions</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>
